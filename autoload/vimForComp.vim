@@ -1,4 +1,4 @@
-let s:dir_name = $VIM_PATH . '/autoload/'
+let s:dir_name = $VIM_P_PATH . '/autoload/'
 function! vimForComp#CreateTemplate_for_cpp ()
     %delete
     for line in readfile(s:dir_name . 'source/template.cpp')

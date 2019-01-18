@@ -22,7 +22,7 @@ Plug 'Marfisc/vorange'
 Plug 'stephpy/vim-yaml'
 "C++
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'stmtk1/vimForComp'
+"Plug 'stmtk1/vimForComp'
 "Scala
 Plug 'derekwyatt/vim-scala'
 "HTML
@@ -51,6 +51,13 @@ Plug 'ternjs/tern_for_vim', {'for': ['javascript', 'javascript.jsx'], 'do' : 'np
 
 "html
 Plug 'othree/html5.vim'
+
+"tex
+Plug 'lervag/vimtex'
+
+"SATySFi
+Plug 'qnighy/satysfi.vim'
+
 call plug#end()
 
 function! EnableJavascript()
@@ -70,8 +77,8 @@ augroup END
 autocmd MyVimrc FileType javascript, javascript.jsx call Enablejavascript()
 
 
-"colorscheme vorange
-colorscheme peachpuff
+colorscheme vorange
+"colorscheme peachpuff
 "colorscheme jellybeans
 let g:deoplete#enable_at_startup = 1
 
@@ -80,8 +87,10 @@ inoremap ( ()<Left>
 inoremap [ []<Left>
 inoremap \" \"\"<Left>
 inoremap ' ''<Left>
+let g:latex_latexmk_options = '-pdf'
 
 source ~/.config/nvim/autoload/vimForComp.vim
     " this one is which you're most likely to use?
     "autocmd BufRead,BufNewFile *.ext,*.ext3|<buffer[=N]> 
 "augroup end
+"
