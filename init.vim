@@ -49,6 +49,8 @@ Plug 'othree/javascript-libraries-syntax.vim', {'for': ['javascript', 'javascrip
 Plug 'maxmellon/vim-jsx-pretty', {'for': ['javascript', 'javascript.jsx']}
 Plug 'ternjs/tern_for_vim', {'for': ['javascript', 'javascript.jsx'], 'do' : 'npm install' }
 
+" Vue.js
+Plug 'posva/vim-vue'
 "html
 Plug 'othree/html5.vim'
 
@@ -57,6 +59,13 @@ Plug 'lervag/vimtex'
 
 "SATySFi
 Plug 'qnighy/satysfi.vim'
+
+" Rust
+Plug 'rhysd/rust-doc.vim'
+
+" MarkDown
+Plug 'gabrielelana/vim-markdown'
+Plug 'greyblake/vim-preview'
 
 call plug#end()
 
@@ -74,12 +83,15 @@ augroup MyVimrc
     autocmd!
 augroup END
 
-autocmd MyVimrc FileType javascript, javascript.jsx call Enablejavascript()
+autocmd MyVimrc FileType javascript, call EnableJavascript()
 
 
-colorscheme vorange
+"colorscheme vorange
 "colorscheme peachpuff
 "colorscheme jellybeans
+set background=dark
+colorscheme solarized8
+
 let g:deoplete#enable_at_startup = 1
 
 inoremap { {}<Left>
@@ -93,4 +105,4 @@ source ~/.config/nvim/autoload/vimForComp.vim
     " this one is which you're most likely to use?
     "autocmd BufRead,BufNewFile *.ext,*.ext3|<buffer[=N]> 
 "augroup end
-"
+let mapleader = "\<Space>"

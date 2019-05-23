@@ -1,7 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/stmtk/tex'
-let g:netrw_dirhist_2='/home/stmtk/rust/chase_and_runaway'
-let g:netrw_dirhist_3='/home/stmtk/rust/chase_and_runaway/src'
-let g:netrw_dirhist_4='/home/stmtk/docker/rails'
-let g:netrw_dirhist_5='/home/stmtk/rust/chase_and_runaway/src'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/saitoumotoki/dev/matchwork/client/app'
+let g:netrw_dirhist_2='/Users/saitoumotoki/dev/matchwork/client'
+let g:netrw_dirhist_3='/Users/saitoumotoki/dev/matchwork/client/app/components'
+let g:netrw_dirhist_4='/Users/saitoumotoki/dev/matchwork/client'
+let g:netrw_dirhist_5='/Users/saitoumotoki/dev/rust/chase_and_runaway/src'
+let g:netrw_dirhist_6='/Users/saitoumotoki/dev/js/nuxt-project'

@@ -13,5 +13,13 @@ function! vimForComp#CreateTemplate_for_c ()
     endfor
 endfunction
 
+function! vimForComp#CreateTemplate_for_rs ()
+    %delete
+    for line in readfile(s:dir_name . 'source/template.rs')
+        call append(line("$"), line)
+    endfor
+endfunction
+
 command! Cpp call vimForComp#CreateTemplate_for_cpp()
 command! C call vimForComp#CreateTemplate_for_c()
+command! Rs call vimForComp#CreateTemplate_for_rs()
