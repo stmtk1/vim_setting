@@ -15,11 +15,14 @@ Plug 'vim-scripts/Align'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'itchyny/lightline.vim'
 Plug 'thinca/vim-quickrun'
+Plug 'scrooloose/nerdtree'
 "Color Scheme
 Plug 'nanotech/jellybeans.vim'
 Plug 'Marfisc/vorange'
 "YAML
 Plug 'stephpy/vim-yaml'
+"Kotlin
+Plug 'udalov/kotlin-vim'
 "C++
 Plug 'octol/vim-cpp-enhanced-highlight'
 "Plug 'stmtk1/vimForComp'
@@ -67,6 +70,12 @@ Plug 'rhysd/rust-doc.vim'
 Plug 'gabrielelana/vim-markdown'
 Plug 'greyblake/vim-preview'
 
+" Stylus
+Plug 'iloginow/vim-stylus'
+
+" Elm
+Plug 'elmcast/elm-vim'
+
 call plug#end()
 
 function! EnableJavascript()
@@ -106,3 +115,5 @@ source ~/.config/nvim/autoload/vimForComp.vim
     "autocmd BufRead,BufNewFile *.ext,*.ext3|<buffer[=N]> 
 "augroup end
 let mapleader = "\<Space>"
+
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
