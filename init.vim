@@ -12,6 +12,7 @@ set backspace=indent,eol,start
 
 call plug#begin('~/.vim/plugged')
 Plug 'vim-scripts/Align'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'itchyny/lightline.vim'
 Plug 'thinca/vim-quickrun'
