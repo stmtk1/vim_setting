@@ -20,6 +20,16 @@ function! vimForComp#CreateTemplate_for_rs ()
     endfor
 endfunction
 
+function! vimForComp#CreateTemplate_for_prime ()
+    %delete
+    for line in readfile(s:dir_name . 'source/prime.cpp')
+        call append(line("$"), line)
+    endfor
+endfunction
+
+
+
 command! Cpp call vimForComp#CreateTemplate_for_cpp()
 command! C call vimForComp#CreateTemplate_for_c()
 command! Rs call vimForComp#CreateTemplate_for_rs()
+command! Prime call vimForComp#CreateTemplate_for_prime()
