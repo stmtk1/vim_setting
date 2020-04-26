@@ -17,6 +17,7 @@ set signcolumn=yes
 
 call plug#begin('~/.vim/plugged')
 Plug 'lifepillar/vim-solarized8'
+Plug 'szw/vim-tags'
 Plug 'vim-scripts/Align'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -172,3 +173,4 @@ function! s:show_documentation()
     endif
 endfunction
 
+au BufNewFile,BufRead *.c let g:vim_tags_project_tags_command = "ctags --languages=c -f ~/c.tags `pwd` 2>/dev/null &"
