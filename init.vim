@@ -126,40 +126,6 @@ let mapleader = "\<Space>"
 
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
-
-" for coc
-command! -nargs=* Prettier :CocCommand prettier.formatFile " for coc-prettier plugin
-command! -nargs=* Format :call CocAction('format')
-
-augroup mygroup
-    autocmd!
-    autocmd FileType   typescript,json    setlocal formatexpr=CocAction('formatSelected')
-    autocmd User       CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-    autocmd CursorHold *                  silent call CocActionAsync('highlight')
-augroup end
-
-
-nnoremap <silent>       K                :call <SID>show_documentation()<CR>
-nnoremap <silent>       <C-L>            :noh<CR>
-inoremap <silent><expr> <TAB>            pumvisible() ? "\<C-N>" : <SID>check_back_space() ? "\<Tab>" : coc#refresh()
-inoremap <silent><expr> <C-Space>        coc#refresh()
-inoremap <expr>         <S-Tab>          pumvisible() ? "\<C-P>" : "\<C-H>"
-inoremap <expr>         <CR>             pumvisible() ? "\<C-Y>" : "\<C-g>u\<CR>"
-nnoremap <silent>       <Space>ff        :<C-U>Format<CR>
-nmap     <silent>       <Space>rn        <Plug>(coc-rename)
-nmap                    <Space>fs        <Plug>(coc-format-selected)
-xmap                    <Space>fs        <Plug>(coc-format-selected)
-nmap                    <Space>a         <Plug>(coc-codeaction)
-nmap                    <Space>q         <Plug>(coc-fix-current)
-nmap                    <Space>r         <Plug>(coc-refactor)
-nnoremap <silent>       <Space><Space>d  :<C-U>CocList diagnostics<CR>
-nnoremap <silent>       <Space><Space>   :<C-U>CocList<CR>
-nmap     <silent>       <Space>dd        <Plug>(coc-diagnostic-info)
-nmap     <silent>       <Space>dk        <Plug>(coc-diagnostic-prev-error)
-nmap     <silent>       <Space>dj        <Plug>(coc-diagnostic-next-error)
-nmap     <silent>       <Space>dp        <Plug>(coc-diagnostic-prev-error)
-nmap     <silent>       <Space>dn        <Plug>(coc-diagnostic-next-error)
-
 function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1] =~# '\s'
@@ -174,3 +140,5 @@ function! s:show_documentation()
 endfunction
 
 au BufNewFile,BufRead *.c let g:vim_tags_project_tags_command = "ctags --languages=c -f ~/c.tags `pwd` 2>/dev/null &"
+
+source ~/.config/nvim/coc.vim
