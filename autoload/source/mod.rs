@@ -1,4 +1,5 @@
-#[derive(Clone)]
+
+#[derive(Clone, Copy)]
 struct ModInt(u64);
 const MOD: u64 = 1000000007;
 
@@ -12,6 +13,14 @@ impl std::ops::Add for ModInt {
     }
 }
 
+impl std::ops::AddAssign for ModInt {
+    fn add_assign(&mut self, other: ModInt) {
+        let ModInt(a) = self;
+        let ModInt(b) = other;
+        *a = (*a + b) % MOD;
+    }
+}
+
 impl std::ops::Sub for ModInt {
     type Output = ModInt;
 
@@ -19,6 +28,14 @@ impl std::ops::Sub for ModInt {
         let ModInt(a) = self;
         let ModInt(b) = other;
         ModInt((a + MOD - b) % MOD)
+    }
+}
+
+impl std::ops::SubAssign for ModInt {
+    fn sub_assign(&mut self, other: ModInt) {
+        let ModInt(a) = self;
+        let ModInt(b) = other;
+        *a = (*a + MOD - b) % MOD;
     }
 }
 
@@ -32,10 +49,18 @@ impl std::ops::Mul for ModInt {
     }
 }
 
+impl std::ops::MulAssign for ModInt {
+    fn mul_assign(&mut self, other: ModInt) {
+        let ModInt(a) = self;
+        let ModInt(b) = other;
+        *a = (*a * b) % MOD;
+    }
+}
+
 impl ModInt {
     fn pow(&self, n: u64) -> ModInt {
         if n == 0 {
-            return self.clone();
+            return ModInt(1);
         }
         let prev = self.pow(n / 2);
         if n % 2 == 1 {
@@ -55,5 +80,12 @@ impl std::ops::Div for ModInt {
 
     fn div(self, other: ModInt) -> ModInt {
         self * other.inverse()
+    }
+}
+
+impl std::fmt::Display for ModInt {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let ModInt(a) = self;
+        write!(f, "{}", a)
     }
 }
